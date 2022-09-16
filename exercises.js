@@ -33,21 +33,37 @@ function exercise3() {
 
   obj = {};
 
-      for(var i = 0; i < words.length; i++) {
-        if (obj [words[i]] == undefined) {
-           obj [words[i]] = 1;
+     words.forEach((word)=> {
+
+        if (obj [word] == undefined) {
+           obj [word] = 1;
         } else {
 
-          obj [words[i]]++;
+          obj [word]++;
         }
+     }
+     );
+
+     for (const frequency in obj) {
+      console.log(`${frequency} ${obj [frequency]}`);
+
+
+     }
+     const array = Array.from(Object.keys (obj));
+     array.sort((a,b) => obj[a] - obj[b] );
+
+     arrayreverse = array.reverse();
+     arrayreverse.forEach(frequency => console.log(`${frequency}`));
+
 
       }
-      Object.values(obj).forEach((freq, word) => console.log(`${words[word]} ${freq}`))
+
+      
 
 //Object.values() returnerar en array vars element är de värden som finns på objektet. 
 //Ordningen på egenskaperna är densamma som den som ges genom att loopa över objektets egenskapsvärden manuellt.
 
-}
+
 /*function exercise3() {
  var textboxValue = document.getElementById('txt').value;
 wordArray = words.split(' ');
@@ -78,7 +94,29 @@ var wordArraySortFunction = function(word1, word2){
 */
 
 function exercise4(){
+   var textboxValue = document.getElementById("txt").value;
+   var blankspace = textboxValue.replace(/\s/g, '')
+  const letters = blankspace.split("");
 
+  obj = {};
+
+     letters.forEach((letter)=> {
+
+        if (obj [letter] == undefined) {
+           obj [letter] = 1;
+        } else {
+
+          obj [letter]++;
+        }
+     }
+     );
+
+     for (const frequency in obj) {
+      console.log(`${frequency} ${obj [frequency]}`);
+
+
+     }
+  
 
 }
 
